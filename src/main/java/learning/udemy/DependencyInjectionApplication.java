@@ -23,6 +23,11 @@ public class DependencyInjectionApplication {
 				.getBean("setterGreetingController");
 		System.out.println("-----------------Setter");
 		System.out.println(setterGreetingController.getGreeting());
+		
+		GreetingController i18nlangGreetingController = (GreetingController) cxt
+				.getBean("i18nLangGreetingController");
+		System.out.println("-----------------Setter");
+		System.out.println(i18nlangGreetingController.getGreeting());
 
 	}
 }
