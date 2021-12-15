@@ -6,12 +6,15 @@ import org.springframework.stereotype.Controller;
 import learning.udemy.service.GreetingService;
 
 @Controller
-public class ConstructorGreetingController {
+public class ConstructorGreetingController implements GreetingController{
 	GreetingService greetingService;
 
 	public ConstructorGreetingController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
 		super();
 		this.greetingService = greetingService;
 	}
-	
+	@Override
+    public String getGreeting(){
+        return greetingService.sayGreetings();
+    }
 }
