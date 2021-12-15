@@ -1,4 +1,4 @@
-package learning.udemy.service;
+package learning.udemy.sfgdi.service;
 
 public interface GreetingService {
 	public String sayGreetings();

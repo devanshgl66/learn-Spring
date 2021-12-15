@@ -1,12 +1,15 @@
-package learning.udemy;
+package learning.udemy.sfgdi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
-import learning.udemy.controller.GreetingController;
+import learning.udemy.sfgdi.controller.GreetingController;
+import learning.udemy.sfgdi.controller.PetController;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"learning.udemy.sfgdi","learning.udemy.pets"})
 public class DependencyInjectionApplication {
 
 	public static void main(String[] args) {
@@ -29,5 +32,7 @@ public class DependencyInjectionApplication {
 		System.out.println("-----------------Setter");
 		System.out.println(i18nlangGreetingController.getGreeting());
 
+		PetController petController = (PetController)cxt.getBean("petController");
+		System.out.println(petController.whichPetIsBest());
 	}
 }

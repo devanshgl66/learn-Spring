@@ -1,4 +1,4 @@
-package learning.udemy.service;
+package learning.udemy.sfgdi.service;
 
 import org.springframework.stereotype.Service;
 
